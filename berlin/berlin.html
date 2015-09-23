@@ -3,12 +3,18 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor Berlin!</h1>
-
-  {{> hello}}
+  {{> berlin}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="berlin">
+  <h1>Meteor Berlin</h1>
+  {{> loginButtons}}
+  <div class="stuff-form">
+    {{> quickForm collection="Stuff" type="insert" id="stuff-form" omitFields="userId,votes"}}
+  </div>
+  <div class="stuff-items">
+    {{#each stuff}}
+    {{> _stuff}}
+    {{/each}}
+  </div>
 </template>

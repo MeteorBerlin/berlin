@@ -7,5 +7,8 @@
 meteor-platform
 autopublish
 insecure
+coffeescript
+accounts-ui
+accounts-password
 aldeed:collection2
 aldeed:autoform
