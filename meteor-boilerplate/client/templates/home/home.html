@@ -4,13 +4,19 @@
       <h1>Welcome to Project Title</h1>
     </div>
     <h4>Insert a stuff</h4>
-    {{>quickForm collection='Stuff' type='insert' id='stuffInsert'}}
+    {{#if currentUser}}
+      {{>quickForm collection='Stuff' type='insert' id='stuffInsert'}}
+    {{/if}}
 
     {{#each stuffs}}
       <div class="stuff">
         <h5 class="title">{{ title }} <span class="badge">{{ votes.length }}</span></h5>
         <div class="stuff-body">{{ body }}</div>
-        <div class="stuff-vote"><button class="btn btn-default">vote</button></div>
+        {{#if currentUser}}
+          <div class="stuff-vote"><button class="btn btn-default">vote</button></div>
+        {{else}}
+          <div class="cant-vote">Login or register to vote, one account only please...</div>
+        {{/if}}
         <hr>
       </div>
     {{/each}}

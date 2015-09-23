@@ -1,6 +1,7 @@
 Template.home.helpers
   stuffs: ->
-    Stuff.find()
+    # This sort does not work :-(
+    Stuff.find {}, sort: 'votes.length': -1
 
 Template.home.events
   'click button': (event, instance) ->
