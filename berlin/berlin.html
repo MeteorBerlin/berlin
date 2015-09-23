@@ -3,18 +3,24 @@
 </head>
 
 <body>
-  {{> berlin}}
+  <div class="container">
+    {{> berlin}}
+  </div>
 </body>
 
 <template name="berlin">
   <h1>Meteor Berlin</h1>
   {{> loginButtons}}
+  <hr>
   <div class="stuff-form">
+    <h2>Add stuff</h2>
     {{> quickForm collection="Stuff" type="insert" id="stuff-form" omitFields="userId,votes"}}
   </div>
+  <hr>
   <div class="stuff-items">
     {{#each stuff}}
     {{> _stuff}}
+    <hr>
     {{/each}}
   </div>
 </template>
