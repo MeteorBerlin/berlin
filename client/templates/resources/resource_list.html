@@ -1,0 +1,22 @@
+<template name="resourceList">
+  {{>quickForm collection="Resources" id="resourceInsertForm" type="insert"}}
+
+  <br/>
+  <br/>
+
+  <div class="ui divided items">
+    {{#each resources}}
+      <div class="item">
+        <div class="content">
+          <div class="header">
+            {{name}}
+          </div>
+          <div class="meta">
+            {{url}}
+
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</template>

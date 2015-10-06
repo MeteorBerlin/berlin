@@ -1,0 +1,5 @@
+.meteor/local
+.idea
+.DS_Store
+packages
+atlassian-ide-plugin.xml
