@@ -1,0 +1,34 @@
+<template name="meetupIndex">
+  <div class="ui header">
+    Upcoming Meetups
+  </div>
+
+  <div class="ui divided items">
+    {{#each meetups}}
+      <div class="item">
+        <div class="content">
+          <a href="{{event_url}}"
+             target="_blank"
+             class="header">
+            {{this.name}}
+          </a>
+          <!--TODO: semantic-ui icons-->
+          <div class="meta">
+            {{date time}}
+          </div>
+          <div class="meta">
+            {{venue.address_1}}
+          </div>
+          <div class="description">
+            {{{description}}}
+          </div>
+          <div class="extra">
+            <div class="ui green label">
+              {{yes_rsvp_count}} going
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</template>

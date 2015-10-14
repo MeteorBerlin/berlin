@@ -1,0 +1,30 @@
+<template name="questionIndex">
+  <div class="ui header">
+    Questions for the next Meetups
+  </div>
+
+  <!--submit a new question-->
+  {{#if currentUser}}
+    {{>questionSubmit}}
+  {{/if}}
+
+  <!--TODO: refactor in own template-->
+  <div class="ui divided items">
+    {{#each questions}}
+      <div class="item">
+        <div class="content">
+          <div class="header">
+            {{title}}
+          </div>
+          <div class="description">
+            {{desc}}
+          </div>
+          <div class="extra">
+            {{creator.name}}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+</template>
