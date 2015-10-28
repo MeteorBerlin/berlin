@@ -6,12 +6,18 @@
              class="ui avatar image"/>
         Meteor Berlin
       </a>
-      <a href="{{pathFor 'meetup.index'}}"
-         class="item">Meetups</a>
+      <!--<a href="{{pathFor 'meetup.index'}}"-->
+         <!--class="item">Meetups</a>-->
       <a href="{{pathFor 'question.index'}}"
          class="item">Questions</a>
+      <a href="{{pathFor 'job.index'}}"
+         class="item">Jobs</a>
       <div class="right menu">
       {{#if currentUser}}
+        {{#if isInRole 'admin'}}
+          <a href="{{pathFor 'job.submit'}}"
+             class="item">Submit Job</a>
+          {{/if}}
         <a href="{{pathFor 'signOut'}}"
            class="item">Sign out</a>
         {{else}}

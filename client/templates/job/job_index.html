@@ -1,0 +1,21 @@
+<template name="jobIndex">
+
+  <div class="ui header">
+    Meteor Jobs in Berlin
+  </div>
+
+  <div class="ui divided items">
+
+    {{#each jobs}}
+     {{>jobItem}}
+    {{else}}
+      <div class="ui message">
+        <div class="header">
+          Currently no jobs available
+        </div>
+
+      </div>
+    {{/each}}
+  </div>
+
+</template>

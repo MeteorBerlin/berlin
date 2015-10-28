@@ -1,0 +1,41 @@
+<template name="jobItem">
+  <div class="item">
+    <div class="content">
+
+      <div class="header">
+        {{title}}
+      </div>
+      <div class="meta">
+        <i class="ui calendar icon"></i>
+        {{moFormat createdAt}}
+      </div>
+      <div class="description">
+        {{{desc}}}
+      </div>
+      <div class="extra">
+        {{#if remote}}
+          <div class="ui green label">
+            <i class="ui world icon"></i>
+            Remote
+          </div>
+        {{/if}}
+        {{#each types}}
+          <div class="ui blue label">
+            <i class="ui wait icon"></i>
+            {{this}}
+          </div>
+        {{/each}}
+        {{#if isInRole 'admin'}}
+          <div class="ui right floated tiny icon buttons">
+            <a href="{{pathFor 'job.edit' _id=_id}}" class="ui green edit button">
+              <i class="ui edit icon"></i>
+            </a>
+            <div class="ui red delete button">
+              <i class="ui remove icon"></i>
+            </div>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</template>
