@@ -1,13 +1,13 @@
 <template name="header">
-  <div class="ui large inverted top fixed menu">
+  <div class="ui large inverted top fixed borderless menu">
     <div class="ui container">
       <a href="{{pathFor 'index'}}" class="item">
         <img src="images/meteor.png"
              class="ui avatar image"/>
         Meteor Berlin
       </a>
-      <!--<a href="{{pathFor 'meetup.index'}}"-->
-         <!--class="item">Meetups</a>-->
+      <a href="{{pathFor 'meetup.index'}}"
+         class="item">Meetups</a>
       <a href="{{pathFor 'question.index'}}"
          class="item">Questions</a>
       <a href="{{pathFor 'job.index'}}"

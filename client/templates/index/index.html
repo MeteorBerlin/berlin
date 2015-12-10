@@ -1,7 +1,7 @@
 <template name="index">
 
-  <div class="ui grid">
-    <div class="ui twelve wide center aligned column">
+  <div class="ui stackable grid">
+    <div class="ui ten wide center aligned column">
       <h1 class="ui header">
         Welcome to the Berlin Meteor Group
       </h1>
@@ -17,14 +17,46 @@
         <div class="item">Rate it</div>
         <div class="item">Comment it</div>
       </div>
+
+      <div class="ui message">
+        <div class="header">Join us on Slack</div>
+        <p>
+          <a href="http://meteor-berlin-slackin.herokuapp.com/"
+             target="_blank">
+            http://meteor-berlin-slackin.herokuapp.com/
+          </a>
+        </p>
+      </div>
+
     </div>
-    <div class="ui four wide center aligned column">
+    <div class="ui six wide center aligned column">
       <div class="ui header">
         Join us on meetup
       </div>
-      <iframe width="225" height="570" src="http://meetu.ps/2PHRjZ" frameborder="0"></iframe>
+
+      <div class="ui items">
+        {{#each meetups}}
+          <div class="item">
+            <div class="content">
+              <a href="{{event_url}}" class="header" target="_blank">{{name}}</a>
+              <div class="meta">{{date time}}</div>
+            </div>
+          </div>
+          {{else}}
+      <iframe width="225"
+              height="570"
+              src="http://meetu.ps/2PHRjZ"
+              frameborder="0"></iframe>
+        {{/each}}
+      </div>
     </div>
   </div>
 
+  <!--<div class="ui embed">-->
+  <!--<iframe src="http://meteor-berlin-slackin.herokuapp.com/"-->
+  <!--frameborder="0">-->
+
+  <!--</iframe>-->
+  <!--</div>-->
 
 </template>

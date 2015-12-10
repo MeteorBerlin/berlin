@@ -1,8 +1,6 @@
 Template.meetupIndex.helpers({
   meetups: function () {
     var events =Template.instance().events.get()
-    console.log(events)
-    //console.log(Template.instance().events.get().time)
     return Template.instance().events.get()
   },
   //convert event time to date object since moFormat doesn't accept millisecond timestamps
