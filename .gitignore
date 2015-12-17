@@ -1,6 +1,6 @@
 .meteor/local
 .idea
 .DS_Store
-packages
+packages/
 atlassian-ide-plugin.xml
 settings.json
