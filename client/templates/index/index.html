@@ -1,62 +1,77 @@
 <template name="index">
 
-  <div class="ui stackable grid">
-    <div class="ui ten wide center aligned column">
-      <h1 class="ui header">
-        Welcome to the Berlin Meteor Group
-      </h1>
+    <div class="ui stackable grid">
+        <div class="ui ten wide center aligned column">
+            <h1 class="ui header">
+                Welcome to the Berlin Meteor Group
+            </h1>
 
-      <p>
-        This is a playground for meteor newbies. What we wanna build:
-      </p>
+            <p>
+                This is a playground for meteor newbies. What we wanna build:
+            </p>
 
-      <div class="ui bulleted list">
-        <div class="item">Questions for the next meetups!!!</div>
-        <div class="item">Meteor development resources</div>
-        <div class="item">Submit links to tutorials, videos etc.</div>
-        <div class="item">Rate it</div>
-        <div class="item">Comment it</div>
-      </div>
-
-      <div class="ui message">
-        <div class="header">Join us on Slack</div>
-        <p>
-          <a href="http://meteor-berlin-slackin.herokuapp.com/"
-             target="_blank">
-            http://meteor-berlin-slackin.herokuapp.com/
-          </a>
-        </p>
-      </div>
-
-    </div>
-    <div class="ui six wide center aligned column">
-      <div class="ui header">
-        Join us on meetup
-      </div>
-
-      <div class="ui items">
-        {{#each meetups}}
-          <div class="item">
-            <div class="content">
-              <a href="{{event_url}}" class="header" target="_blank">{{name}}</a>
-              <div class="meta">{{date time}}</div>
+            <div class="ui bulleted list">
+                <div class="item">Questions for the next meetups!!!</div>
+                <div class="item">Meteor development resources</div>
+                <div class="item">Submit links to tutorials, videos etc.</div>
+                <div class="item">Rate it</div>
+                <div class="item">Comment it</div>
             </div>
-          </div>
-          {{else}}
-      <iframe width="225"
-              height="570"
-              src="http://meetu.ps/2PHRjZ"
-              frameborder="0"></iframe>
-        {{/each}}
-      </div>
+
+            <div class="ui message">
+                <div class="header">Join us on Slack</div>
+                <p>
+                    <a href="http://meteor-berlin-slackin.herokuapp.com/"
+                       target="_blank">
+                        http://meteor-berlin-slackin.herokuapp.com/
+                    </a>
+                </p>
+            </div>
+
+        </div>
+        <div class="ui six wide center aligned column">
+            <div class="ui header">
+                Join us on meetup
+            </div>
+
+            <div class="ui items">
+                {{#each meetups}}
+                    <div class="item">
+                        <div class="content">
+                            <a href="{{event_url}}" class="header" target="_blank">{{name}}</a>
+                            <div class="meta">{{date time}}</div>
+                        </div>
+                    </div>
+                {{else}}
+                    <iframe width="225"
+                            height="570"
+                            src="http://meetu.ps/2PHRjZ"
+                            frameborder="0"></iframe>
+                {{/each}}
+            </div>
+
+            <div class="ui header">
+                We are looking for reinforcement!
+            </div>
+
+            <div class="ui items">
+                {{#each jobs}}
+                    <div class="item">
+                        <div class="content">
+                            <a href="{{urlFor 'job.index'}}" class="header">{{title}}</a>
+                            <div class="meta">{{{desc}}}</div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!--<div class="ui embed">-->
-  <!--<iframe src="http://meteor-berlin-slackin.herokuapp.com/"-->
-  <!--frameborder="0">-->
+    <!--<div class="ui embed">-->
+    <!--<iframe src="http://meteor-berlin-slackin.herokuapp.com/"-->
+    <!--frameborder="0">-->
 
-  <!--</iframe>-->
-  <!--</div>-->
+    <!--</iframe>-->
+    <!--</div>-->
 
 </template>

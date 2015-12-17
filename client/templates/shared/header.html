@@ -12,6 +12,10 @@
          class="item">Questions</a>
       <a href="{{pathFor 'job.index'}}"
          class="item">Jobs</a>
+    {{#if isInRole 'admin' }}
+        <a href="{{pathFor 'job.submit'}}"
+         class="item">Post new Jobs</a>
+    {{/if}}
       <div class="right menu">
       {{#if currentUser}}
         {{#if isInRole 'admin'}}
